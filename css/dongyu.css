@@ -1,0 +1,76 @@
+
+/*字体*/body{font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, sans-serif;background-color: #F7F7F7;}
+li{list-style-type:none;}
+/*菜单*/
+@media (min-width: 1024px){body.mdui-drawer-body-left{padding-left: 0px;}}
+@media (min-width: 1024px){.mdui-appbar-with-toolbar .mdui-drawer{top: 0px;background-color: #FFFFFF;}}
+.dongyucd{margin: 0 0 0 1pc;cursor: pointer;border: none;background: 0 0;outline: 0;position: fixed;top: 2pc;z-index: 8;height: 2pc;width: 2pc;color:#006998;}
+.dongyucd2{margin: 0 1pc 0 0;cursor: pointer;border: none;background: 0 0;outline: 0;position: fixed;top: 2pc;z-index: 8;height: 2pc;width: 2pc;color:#006998;right: 0px;}
+.cddb{height: 160px;width: 100%;background-repeat: repeat;background-position: 50% 50%;background-size: cover;background-origin: padding-box;background-attachment: scroll;}
+.cddb .zz{position: relative;height: 100%;background: rgba(0,0,0,.2);}
+.cddb .zz .avatar{width: 54px;height: 54px;margin: 20px;}
+.cddb .qm{position: absolute;bottom: 0;left: 0;right: 0;height: 48px;}
+.cddb .qm .zw{margin-left: 16px;}
+.cddb .ant{float: right;margin: 1pc;padding: 0;background-image: none;border: none;height: 40px;width: 40px;font-size: 20px;opacity: .7;-webkit-transition: all .2s ease-in-out;transition: all .2s ease-in-out;}
+.mdui-list-item-content{font-size: 14px;}
+.mdui-container, .mdui-container-fluid{box-sizing: border-box;padding-right: 0px;padding-left: 0px;}
+.mdui-cdfooter {
+    padding: 0 16px;
+    -webkit-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+}
+/*pjax*/
+#instantclick-bar{background: #2196F3;}
+/*zhu*/
+.main{padding-top: 82px;}
+.mdui-db{text-align:center;margin-bottom: 16px;}
+.mduijg{margin-bottom: 36px;}
+.mduijg time{font-size: 14px;line-height: 24px;opacity: .7;}
+
+.timg{height: 170PX;border-radius: 5px 5px 0 0;}
+.t2{height: 80PX;background-color: #f8fbff;}
+.t2 img{margin: 7px 0px 0px 10px;float: left;}
+.t2 .name{padding:22px 0 0 80px;color:#006998;font-size: 24px;}
+.t2 .signature{padding-left:81px;font-size: 14px;}
+.avatar{border-radius: 50%;border: 2px solid #fff;}
+.t3{width: 30%;float: right;margin: 5px;}
+.wz p{font-family: "Microsoft YaHei light";font-size: .9em;margin: 8px 0 8px 0;color: #8c8c8c;padding:0px 10px 0px 10px;}
+/*sy*/
+@media (max-width: 599px){
+.mduijg .tit{font-size: 20px; }
+.mduijg time{display:none;}
+}
+/*翻页*/
+a{text-decoration:none;}
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+a:active{text-decoration:none;}
+#lamu {
+	right:0;
+	-webkit-transition:all .3s ease-in-out;
+	transition:all .3s ease-in-out;
+	-webkit-transform:translate(7px,7px);
+	transform:translate(7px,7px);
+	-ms-transform:translate(7px,7px)
+}
+#lamu:hover {
+	-webkit-transform:translate(0,0);
+	transform:translate(0,0);
+	-ms-transform:translate(0,0)
+}
+#lamu img {
+	transition:all .5s;
+	-webkit-animation:nav-left .5s;
+	animation:nav-left .5s
+}
+.top {
+	position:fixed;
+	bottom:0;
+	z-index:1000;
+	line-height:0
+}
+.top a {
+	padding:0
+}
