@@ -1,5 +1,22 @@
+<?php
+/**
+ * Gallery 映像
+ * @package custom
+ */
+?>
 <?php $this->need('header.php'); ?>
 
+<div class="mdui-container">
+	
+	
+
+	
+  <a class="mdui-color-theme mdui-ripple" mdui-dialog="{target: '#example-1'}"><img src="<?php $this->options->themeUrl(); ?>images/picHD_11.png" /></a>
+
+  <div class="mdui-dialog" id="example-1" style="">
+    	<img src="<?php $this->options->themeUrl(); ?>images/picHD_11.png" />
+    </div>
+   
 
 
 

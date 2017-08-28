@@ -40,6 +40,10 @@ li{list-style-type:none;}
 @media (max-width: 599px){
 .mduijg .tit{font-size: 20px; }
 .mduijg time{display:none;}
+.main{padding-top: 0px;}
+.mdui-appbar-with-toolbar {padding-top: 0px;}
+.m2 {width: 100%;}
+.mdui-db{margin-top: 68px;}
 }
 /*翻页*/
 a{text-decoration:none;}

@@ -8,7 +8,7 @@
     <img class="avatar" src="<?php echo $a ?>" alt="<?php echo $comments->author; ?>" />
     <div class="cp">
     <?php $comments->content(); ?>
-    <div class="cm"><span class="ca"><?php echo $author ?></span> <?php $comments->date(); ?><span class="cr"><?php $comments->reply(); ?></span></div>
+    <div class="cm"><span class="ca"><?php echo $author ?></span> <?php $comments->date(); ?><span data-no-instant class="cr"><?php $comments->reply(); ?></span></div>
     </div>
 </div>
 <?php if ($comments->children){ ?><div class="children"><?php $comments->threadedComments($options); ?></div><?php } ?>

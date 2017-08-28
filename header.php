@@ -10,5 +10,5 @@
 </head>
 <body class="mdui-appbar-with-toolbar  mdui-theme-primary-blue mdui-theme-accent-pink mdui-loaded ">
 	<button id="toggle" class="dongyucd" style="display: initial;"><i class="mdui-icon material-icons">menu</i></button>
-<lamu onclick="goToWhere(0)" class="top" id="lamu"><img src="https://sa.bi/usr/themes/gay/img/1.png" onmouseover="this.src='https://sa.bi/usr/themes/gay/img/2.png'" ondragstart="return false" onmouseout="this.src='https://sa.bi/usr/themes/gay/img/1.png'" id="audioBtn"></lamu>
+<lamu onclick="goToWhere(0)" class="top" id="lamu"><img src="<?php $this->options->themeUrl('images/1.png'); ?>" onmouseover="this.src='<?php $this->options->themeUrl('images/2.png'); ?>'" ondragstart="return false" onmouseout="this.src='<?php $this->options->themeUrl('images/1.png'); ?>'" id="audioBtn"></lamu>
 	
