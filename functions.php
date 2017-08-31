@@ -3,36 +3,86 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 /* 后台设置 */
 function themeConfig($form) {
-	//header部分
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
+	echo '<style>.col-tb-8{font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, sans-serif;background-color: #F7F7F7;}a:hover{text-decoration: none;}sm{margin: .5em 0 0;color: #999;font-size: .92857em;font-weight: initial;}</style>
+	<h2>DONG主题 · 设置</h2>
+	<p> 
+	<a href="https://github.com/2016Dongyu/Typecho-theme-DONG-MDUI" >💪帮助&支持</a> &nbsp;
+    <a href="https://github.com/2016Dongyu/Typecho-theme-DONG-MDUI/issues" target="_blank"> ❗ 建议&反馈</a> &nbsp;
+    <a href="https://github.com/2016Dongyu/Typecho-theme-DONG-MDUI/" target="_blank">⭐前去GITHUB获取更新状态</a>
+    </p>
+    <HR color=#ccc SIZE=1>';
+		
+		
+		
+    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, 'https://q.qlogo.cn/g?b=qq&nk=774024602@qq.com&s=100', _t('站点LOGO地址<sm> - 这里将适用站点ico和抽屉式导航的头像</br>如：<code>https://q.qlogo.cn/g?b=qq&nk=774024602@qq.com&s=100</code></sm>'), _t(''));
 	$form->addInput($logoUrl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
-	$logoTxt = new Typecho_Widget_Helper_Form_Element_Text('logoTxt', NULL, NULL, _t('居中标题'), _t('Banner正中展示的简单标题'));
-	$form->addInput($logoTxt);
-
-	$bannerimg = new Typecho_Widget_Helper_Form_Element_Text('bannerimg', NULL, NULL, _t('顶部Banner图片'), _t('顶部Banner图片链接'));
-    $form->addInput($bannerimg);
-
-	$site_bw = new Typecho_Widget_Helper_Form_Element_Radio('site_bw',
-        array('able'=>_t('开启'),'disable'=>_t('关闭')),
-        'disable',
-        _t("站点黑白模式"),
-        _t("开启后站点呈现为黑白模式")
-        );
-    $form->addInput($site_bw);
 	
-	
+	$ctdhl = new Typecho_Widget_Helper_Form_Element_Radio('ctdhl',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('抽屉式导航名字签名自定义<sm> - 默认禁止，启用后可以自定义抽屉式导航栏的头像和签名。</sm>'), _t(''));
+    $form->addInput($ctdhl);
+   		$ndtx = new Typecho_Widget_Helper_Form_Element_Text('ndtx', NULL, 'https://q.qlogo.cn/g?b=qq&nk=774024602@qq.com&s=100', _t(' <sm>● 自定义抽屉式导航头像 - 先得启用上方的“抽屉式导航自定义”</sm>'), _t(''));
+		$form->addInput($ndtx->addRule('xssCheck', _t('请不要使用特殊字符')));
+    	$ndname = new Typecho_Widget_Helper_Form_Element_Text('ndname', NULL, 'DONGYu', _t(' <sm>● 自定义抽屉式导航名字 - 先得启用上方的“抽屉式导航自定义”</sm>'), _t(''));
+		$form->addInput($ndname->addRule('xssCheck', _t('请不要使用特殊字符')));
+		$ndqm = new Typecho_Widget_Helper_Form_Element_Text('ndqm', NULL, 'DOOOOOOOOOY', _t(' <sm>● 自定义抽屉式导航签名 - 先得启用上方的“抽屉式导航自定义”</sm>'), _t(''));
+		$form->addInput($ndqm->addRule('xssCheck', _t('请不要使用特殊字符')));
+		
+	$sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
+    array('guidang' => _t('显示归档'),
+    'yingxiang' => _t('显示映像'),
+    'yemian' => _t('显示页面分支'),
+    'fenlei' => _t('显示分类汇总'),
+    'links' => _t('显示友情链接'),
+    'zhaowo' => _t('显示联系我'),
+    'about' => _t('显示关于'),
+    'xuke' => _t('CC许可证')),
+    array('guidang', 'yingxiang', 'yemian', 'fenlei', 'zhaowo', 'about', 'links','xuke'), _t('抽屉式导航菜单自定义<sm> - 根据自己喜爱设置</sm>'));
+    
+    $form->addInput($sidebarBlock->multiMode());
+    
+    
+    
 
-	$siteTime = new Typecho_Widget_Helper_Form_Element_Text('siteTime', NULL, '2017,05,20,00,00,00', _t('3.站点开通时间 <span class="description">- 将显示在网站底部（默认显示年和天）</br>格式为：<code>2017,05,20,00,00,00</code></span>'), _t(''));
+	$yxurl = new Typecho_Widget_Helper_Form_Element_Text('yxurl', NULL, 'Gallery.html', _t(' <sm>● 映像页面设置 - 在这里设置抽屉式导航的映像链接</sm>'), _t(''));
+	$form->addInput($yxurl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+	
+	$uemail = new Typecho_Widget_Helper_Form_Element_Text('uemail', NULL, 'dongyui@qq.com', _t(' <sm>● 联系邮箱设置 - 在这里设置抽屉式导航的联系邮箱链接</sm>'), _t(''));
+	$form->addInput($uemail->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+	
+	$abouturl = new Typecho_Widget_Helper_Form_Element_Text('abouturl', NULL, 'About.html', _t(' <sm>● 关于页面设置 - 在这里设置抽屉式导航的关于页面链接</sm>'), _t(''));
+	$form->addInput($abouturl->addRule('xssCheck', _t('请不要在图片链接中使用特殊字符')));
+
+
+
+	$siteTime = new Typecho_Widget_Helper_Form_Element_Text('siteTime', NULL, '2017,05,20,00,00,00', _t('站点开通时间 <sm> - 将显示在网站底部（默认显示年和天）</br>格式为：<code>2017,05,20,00,00,00</code></sm>'), _t(''));
     $form->addInput($siteTime);
 	
 	$siteTime2 = new Typecho_Widget_Helper_Form_Element_Radio('siteTime2',
         array('able' => _t('启用'),
             'disable' => _t('禁止'),
         ),
-        'disable', _t('--站点开通日期全显'), _t('默认禁止，启用后效果为：‘X年X天X时X分X秒’<HR color=#ccc SIZE=1>'));
+        'disable', _t(' <sm>● 站点开通日期全显 - 默认禁止，启用后效果为：‘X年X天X时X分X秒’</sm>'), _t(''));
     $form->addInput($siteTime2);
+    
+    $pjax = new Typecho_Widget_Helper_Form_Element_Radio('pjax',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('Instantclick - Pjax<sm> - 默认禁止，启用后加快你的网页访问速度！</br>注:如果点击浏览器的后退后点击抽屉式导航的按钮，抽屉式导航将无效！'), _t(''));
+    $form->addInput($pjax);
+    
+    $jscsscdn = new Typecho_Widget_Helper_Form_Element_Radio('jscsscdn',
+        array('able' => _t('启用'),
+            'disable' => _t('禁止'),
+        ),
+        'disable', _t('CSS JS - cdn<sm> - 默认禁止，启用后某些CSS和JS将使用Bootcdn.cn的CDN。</br>CND文件有:<code>mdui.min.js、instantclick.min.js、mdui.min.css</code>'), _t(''));
+    $form->addInput($jscsscdn);
 	
-
+	
+    
 }
 
 
@@ -174,6 +224,10 @@ function says() {
     $says = random_str();
     echo $says;
 }
+
+//表情
+
+
 
 
 //缩略图调用

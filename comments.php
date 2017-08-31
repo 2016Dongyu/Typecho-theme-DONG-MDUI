@@ -14,7 +14,8 @@
 <?php if ($comments->children){ ?><div class="children"><?php $comments->threadedComments($options); ?></div><?php } ?>
 </li>
 <?php } ?>
-<style type="text/css">.cf{margin:1rem 0 3rem 0}.cf .page-navigator{margin:3.75rem 0 3rem 0}.response{margin:2rem 0}.hinfo{display:none}.cf a{color:#aaa}.comment-list{padding-left:0;list-style-type:none;margin:0}.avatar{display:block;float:left;width:40px;height:40px;margin:1.4rem 1rem 0 0;border-radius:50%}.cp{overflow:hidden;padding:1rem 0;border-bottom:1px dotted #e0e0e0}.cp p{margin:0}.cr{float:right;display:none}.cp:hover .cr{display:block}.ccr,.cm{font-size:.766rem;margin-top:1rem;color:#aaa}.ccr{text-align:right}.ca{padding:.1rem .25rem;border-radius:2px;background:#eee;font-size:.7rem}.ca a:hover{color:#f08f00!important;background:rgba(255,152,0,.1)}.c_p>.children{margin-left:1rem;padding-left:40px}.tbox{padding:0 0 0 18px}.ci{font-size:14px;line-height:1.5;color:#555;height:30px;margin:10px 0;border:1px solid #ccc;border-radius:2px;width:100%;padding:3px 7px;margin-left:-18px;overflow:auto}.ci:focus{border-color:#999;outline:0}textarea.ci{padding-top:8px;height:10rem;resize:none}.submit{font-size:1rem;border:1px solid #f0f0f0;padding:0 30px;line-height:36px;text-align:center;height:36px;margin:0 auto;display:block;background:#f5f5f5}.submit:hover{color:#000;border-color:#ddd;background:#ddd;cursor:pointer}@media only screen and (max-width:767px){.c_p .children{margin-left:0;padding-left:0}}</style>
+	
+<style type="text/css">.cf{margin:1rem 0 3rem 0}.cf .page-navigator{margin:3.75rem 0 3rem 0}.response{margin:2rem 0}.hinfo{display:none}.cf a{color:#aaa}.comment-list{padding-left:0;list-style-type:none;margin:0}.avatar{display:block;float:left;width:40px;height:40px;margin:1.4rem 1rem 0 0;border-radius:50%}.cp{overflow:hidden;padding:1rem 0;border-bottom:1px dotted #e0e0e0}.cp p{margin:0}.cr{float:right;display:none}.cp:hover .cr{display:block}.ccr,.cm{font-size:.766rem;margin-top:1rem;color:#aaa}.ccr{text-align:right}.ca{padding:.1rem .25rem;border-radius:2px;background:#eee;font-size:.7rem}.ca a:hover{color:#f08f00!important;background:rgba(255,152,0,.1)}.c_p>.children{margin-left:1rem;padding-left:40px}.tbox{padding:0 0 0 18px}.ci{font-size:14px;line-height:1.5;color:#555;height:30px;margin:10px 0;border:1px solid #ccc;border-radius:2px;width:100%;padding:3px 7px;margin-left:-18px;overflow:auto}.ci:focus{border-color:#999;outline:0}textarea.ci{padding-top:8px;height:10rem;resize:none}.submit{padding:0 30px;line-height:36px;text-align:center;height:36px;margin:0 auto;display:block}@media only screen and (max-width:767px){.c_p .children{margin-left:0;padding-left:0}}</style>
 <div id="comments" class="cf">
 <?php $this->comments()->to($comments); ?>
 <?php if ($comments->have()): ?>
@@ -35,14 +36,31 @@
         <div class="ainfo">
         <?php endif ; ?>
         <div class="tbox">
-        <input type="text" name="author" id="author" class="ci" placeholder="称呼" value="<?php $this->remember('author'); ?>" required>
-        <input type="email" name="mail" id="mail" class="ci" placeholder="邮箱" value="<?php $this->remember('mail'); ?>" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>>
-        <input type="url" name="url" id="url" class="ci" placeholder="http://" value="<?php $this->remember('url'); ?>" <?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?>>
+        	
+        <div class="mdui-textfield mdui-textfield-floating-label">
+  		<i class="mdui-icon material-icons">textsms</i>
+ 		 <label class="mdui-textfield-label">Name</label>
+  		<input type="text" name="author" id="author" class="mdui-textfield-input" value="<?php $this->remember('author'); ?>" required>
+		</div>
+		
+		<div class="mdui-textfield mdui-textfield-floating-label">
+  		<i class="mdui-icon material-icons">email</i>
+ 		 <label class="mdui-textfield-label">E-mail</label>
+ 		<input type="email" name="mail" id="mail" class="mdui-textfield-input" value="<?php $this->remember('mail'); ?>" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?>>
+		</div>
+		
+		<div class="mdui-textfield mdui-textfield-floating-label">
+  		<i class="mdui-icon material-icons">flag</i>
+ 		 <label class="mdui-textfield-label">Web-Site</label>
+ 		<input type="url" name="url" id="url" class="mdui-textfield-input" value="<?php $this->remember('url'); ?>" <?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?>>
+		</div>
+
+        
         </div>
         </div>
     <?php endif; ?>
-    <div class="tbox"><textarea name="text" id="textarea" class="ci" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};" placeholder="在这里输入你的评论" required ><?php $this->remember('text',false); ?></textarea></div>
-    <button type="submit" class="submit" id="submit">提交评论 (Ctrl + Enter)</button>
+    <div class="tbox"><textarea name="text" id="textarea" class="ci " onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};" placeholder="在这里输入你的评论" required ><?php $this->remember('text',false); ?></textarea></div>
+    <button type="submit" class="submit mdui-btn mdui-color-theme mdui-ripple" id="submit">提交评论 (Ctrl + Enter)</button>
 </form>
 </div>
 </div>

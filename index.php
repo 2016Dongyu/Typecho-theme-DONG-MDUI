@@ -22,7 +22,7 @@
 
 
 	<div class="mdui-db">
-		<img oncontextmenu="return false;" ondragstart="return false;" src="<?php $this->options->themeUrl('images/logo.png'); ?>">
+		<img width="299" height="54" oncontextmenu="return false;" ondragstart="return false;" src="<?php $this->options->themeUrl(''); ?>images/<?php echo(rand(0,3)) ?>.SVG">
 	</div>
 
 	<div class="mdui-container mdui-card mdui-typo mduijg mdui-hoverable mdui-ripple">

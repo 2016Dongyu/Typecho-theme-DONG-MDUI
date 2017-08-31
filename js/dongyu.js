@@ -1,5 +1,4 @@
-console.log("\n %c Welcome to DONGYu.SIte %c http://www.dongyu.site \n\n","color: #fff; background: #333; padding:5px 0;","background: #2196f3; color: #fff; padding:5px 0;");
-
+//
 var goToWhere = function (where)  
         {  
             var me = this;  
