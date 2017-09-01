@@ -1,4 +1,4 @@
-![logo.jpg](https://i.loli.net/2017/08/31/59a7b9f8b49df.jpg
+![logo.jpg](https://i.loli.net/2017/08/31/59a7b9f8b49df.jpg)
 # MDUI
 一个基于[mdui前端](https://github.com/zdhxiong/mdui)的typecho主题
 
