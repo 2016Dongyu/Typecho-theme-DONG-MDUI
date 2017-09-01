@@ -140,7 +140,7 @@
 	
    <li class="mdui-subheader">Why？</li>
    <?php if (!empty($this->options->sidebarBlock) && in_array('zhaowo', $this->options->sidebarBlock)): ?>
-   <a href="<?php $this->options->uemail(); ?>">
+   <a href="mailto:<?php $this->options->uemail(); ?>">
     <li class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons">email</i>
       <div class="mdui-list-item-content">联系我</div>
