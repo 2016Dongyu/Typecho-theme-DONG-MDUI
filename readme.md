@@ -1,3 +1,12 @@
+
+
+
+# 近期有时间将进行大更新，主题很多内容要重做！
+
+
+
+
+
 ![logo.jpg](https://i.loli.net/2017/08/31/59a7b9f8b49df.jpg)
 # MDUI
 一个基于[mdui前端](https://github.com/zdhxiong/mdui)的typecho主题
